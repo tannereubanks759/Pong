@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement2 : MonoBehaviour
 {
     //reference to the character controller that handles the collisions and movement.
     public CharacterController controller;
     //speed of the player
     public float speed = 1f;
-
-  
 
     // Update is called once per frame
     void Update()
@@ -19,13 +17,13 @@ public class PlayerMovement : MonoBehaviour
         Vector3 motion = Vector3.zero;
 
         //step 2 get player input
-        
-        float inputY = Input.GetAxis("Vertical");
+
+        float inputY = Input.GetAxis("Vertical1");
 
         //step 3 set the new position based on input and speed
         //the new value of currentPos in x will be its current value, plus the speed
         //multiplied by the input (-1 or 1) and time.deltatime
-        
+
         currentPos.y = currentPos.y + speed * inputY * Time.deltaTime;
 
         //this will get us vector of our movement, instead of the new position.
@@ -39,6 +37,5 @@ public class PlayerMovement : MonoBehaviour
 
         //instead of moving normally, we can use the character controller
         controller.Move(motion);
-
     }
 }
