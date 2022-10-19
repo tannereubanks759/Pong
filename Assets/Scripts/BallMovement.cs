@@ -12,7 +12,7 @@ public class BallMovement : MonoBehaviour
 
     void Start()
         {
-            X = -10f;
+            X = -6f;
             Y = Random.Range(-6f, 6f);
             PushVector = new Vector2(X, Y);
             Puck.AddForce(PushVector * PushForce);

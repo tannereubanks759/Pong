@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Puck: {fileID: 240405851}
-  PushForce: 30
+  PushForce: 45
   X: 0
   Y: 0
   PushVector: {x: 0, y: 0}
