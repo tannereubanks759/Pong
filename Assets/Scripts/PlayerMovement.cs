@@ -9,8 +9,20 @@ public class PlayerMovement : MonoBehaviour
     //speed of the player
     public float speed = 1f;
 
-  
-
+    public bool cooldownDone = false;
+    public float cooldown = 5f;
+    public float abilityCount = 0f;
+    private void Start()
+    {
+        if(cooldown > 0)
+        {
+            cooldown -= Time.deltaTime;
+        }
+        else
+        {
+            cooldownDone = true;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -40,5 +52,8 @@ public class PlayerMovement : MonoBehaviour
         //instead of moving normally, we can use the character controller
         controller.Move(motion);
 
+        if (Input.GetKeyDown(KeyCode.F) && cooldownDone == true){
+            //
+        }
     }
 }
