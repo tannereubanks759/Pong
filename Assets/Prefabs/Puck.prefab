@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6241794664888818874}
   - component: {fileID: 6241794664888818873}
-  - component: {fileID: 6241794664888818872}
   - component: {fileID: 6241794664888818879}
   - component: {fileID: 6241794664888818875}
+  - component: {fileID: 6673464768421958459}
   m_Layer: 0
   m_Name: Puck
   m_TagString: Untagged
@@ -87,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6241794664888818872
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6241794664888818878}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &6241794664888818879
 Rigidbody2D:
   serializedVersion: 4
@@ -141,3 +125,19 @@ MonoBehaviour:
   X: 0
   Y: 0
   PushVector: {x: 0, y: 0}
+--- !u!58 &6673464768421958459
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241794664888818878}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
