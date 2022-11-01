@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         
         currentPos.y = currentPos.y + speed * inputY * Time.deltaTime;
 
+
         //this will get us vector of our movement, instead of the new position.
         //motion.x = transform.forward.normalized.x * speed * inputX * Time.deltaTime;
         //motion.z = transform.forward.normalized.z * speed * inputY * Time.deltaTime;
@@ -52,7 +53,8 @@ public class PlayerMovement : MonoBehaviour
             collider1.sharedMaterial = mat;
             Debug.Log("f key pressed");
             player.GetComponent<SpriteRenderer>().color = Color.red;
-            UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(player, "Assets/Scripts/PlayerMovement.cs (59,13)", "Timer");
+            player.AddComponent<Timer>();
+            //UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(player, "Assets/Scripts/PlayerMovement.cs (59,13)", "Timer");
         }
     }
     

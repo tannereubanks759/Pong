@@ -45,13 +45,14 @@ public class PlayerMovement2 : MonoBehaviour
 
         //instead of moving normally, we can use the character controller
         controller.Move(motion);
-
+        
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             collider1.sharedMaterial = mat;
             Debug.Log("right arrow key pressed");
             player.GetComponent<SpriteRenderer>().color = Color.red;
-            UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(player, "Assets/Scripts/PlayerMovement2.cs (59,13)", "Timer2");
+            player.AddComponent<Timer2>();
+            //UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(player, "Assets/Scripts/PlayerMovement2.cs (59,13)", "Timer2");
         }
     }
 }

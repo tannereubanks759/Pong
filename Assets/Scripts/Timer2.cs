@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer2 : MonoBehaviour
 {
-    public float cooldown = 6f;
+    public float cooldown = 5f;
     private GameObject player;
     public BoxCollider2D collider1;
     public PhysicsMaterial2D mat1;
