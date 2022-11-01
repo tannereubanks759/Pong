@@ -8,20 +8,15 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     //speed of the player
     public float speed = 1f;
-
-    public bool cooldownDone = false;
-    public float cooldown = 5f;
     public float abilityCount = 0f;
+    public BoxCollider2D collider1;
+    public GameObject body;
+    public PhysicsMaterial2D mat;
+    public GameObject player;
     private void Start()
     {
-        if(cooldown > 0)
-        {
-            cooldown -= Time.deltaTime;
-        }
-        else
-        {
-            cooldownDone = true;
-        }
+        collider1 = body.GetComponent<BoxCollider2D>();
+        
     }
     // Update is called once per frame
     void Update()
@@ -52,8 +47,13 @@ public class PlayerMovement : MonoBehaviour
         //instead of moving normally, we can use the character controller
         controller.Move(motion);
 
-        if (Input.GetKeyDown(KeyCode.F) && cooldownDone == true){
-            //
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            collider1.sharedMaterial = mat;
+            Debug.Log("f key pressed");
+            player.GetComponent<SpriteRenderer>().color = Color.red;
+            UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(player, "Assets/Scripts/PlayerMovement.cs (59,13)", "Timer");
         }
     }
+    
 }

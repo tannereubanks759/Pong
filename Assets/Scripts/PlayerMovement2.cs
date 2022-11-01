@@ -8,7 +8,15 @@ public class PlayerMovement2 : MonoBehaviour
     public CharacterController controller;
     //speed of the player
     public float speed = 1f;
+    public BoxCollider2D collider1;
+    public GameObject body;
+    public PhysicsMaterial2D mat;
+    public GameObject player;
+    private void Start()
+    {
+        collider1 = body.GetComponent<BoxCollider2D>();
 
+    }
     // Update is called once per frame
     void Update()
     {
@@ -37,5 +45,13 @@ public class PlayerMovement2 : MonoBehaviour
 
         //instead of moving normally, we can use the character controller
         controller.Move(motion);
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            collider1.sharedMaterial = mat;
+            Debug.Log("right arrow key pressed");
+            player.GetComponent<SpriteRenderer>().color = Color.red;
+            UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(player, "Assets/Scripts/PlayerMovement2.cs (59,13)", "Timer2");
+        }
     }
 }
